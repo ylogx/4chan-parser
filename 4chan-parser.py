@@ -36,7 +36,6 @@ def get_image(board,thread):
                 ext = str(post['ext'])
             except KeyError:
                 continue
-            board = 'hc'
             image_url = 'http://i.4cdn.org/' + board+'/' + tim + ext
             print(image_url)
             file_downloader.download(image_url)
