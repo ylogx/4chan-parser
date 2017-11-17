@@ -50,18 +50,17 @@ def catalog_list(board):
     output = open_url(url)
     if output:
         out = json.loads(output)
-        #TODO Parse each page
-        # print(out[0]['page'])
-        for thread in out[0]['threads']:
-            print('-------------------------------------')
-#             print(thread)
-            try:
-                print(thread['sub'])
-                print(thread['com'])
-                print(thread['no'])
-                print(thread['semantic_url'])
-            except KeyError:
-                continue
+        for page in out:
+            for thread in page['threads']:
+                print('-------------------------------------')
+#               print(thread)
+                try:
+                    print(thread['sub'])
+                    print(thread['com'])
+                    print(thread['no'])
+                    print(thread['semantic_url'])
+                except KeyError:
+                    continue
 
 
 def main(argv):
