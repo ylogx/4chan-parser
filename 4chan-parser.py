@@ -28,7 +28,6 @@ def get_image(board,thread):
     if output:
         # Parse for success or failure
         out = json.loads(output)
-        # print(out['posts'])
         for post in out['posts']:
             print(post)
             try:
@@ -40,11 +39,6 @@ def get_image(board,thread):
             print(image_url)
             file_downloader.download(image_url)
 
-def get_thread(board):
-    return 566227;
-    url = 'http://a.4cdn.org/hc/thread/566227.json'
-    return url
-
 def catalog_list(board):
     url = 'http://a.4cdn.org/'+board+'/catalog.json'
     output = open_url(url)
@@ -53,7 +47,6 @@ def catalog_list(board):
         for page in out:
             for thread in page['threads']:
                 print('-------------------------------------')
-#               print(thread)
                 try:
                     print(thread['sub'])
                     print(thread['com'])

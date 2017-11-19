@@ -51,7 +51,7 @@ def download(url,destination='./',desc=None):
         filename = os.path.join(destination, filename);
     if os.path.exists(filename):
         #FIXME: adding suffix if file exists
-#         filename += time.strftime("%y%m%d-%H%M%S.txt");
+        # filename += time.strftime("%y%m%d-%H%M%S.txt");
         print('File {0} exists'.format(filename));
 
     with open(filename, 'wb') as f:
@@ -78,9 +78,7 @@ def download(url,destination='./',desc=None):
                 status += "   [{0:6.2f}%]".format(file_size_dl * 100 / file_size)
             status += chr(13)
             print(status,)
-        print()
-    print('Saved: ',filename);
-    # return filename
+    print('\nSaved: ',filename);
 
 def download_2(url):
     ''' 2nd implementation '''
