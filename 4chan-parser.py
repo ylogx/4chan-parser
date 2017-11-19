@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import file_downloader
+from filedownloader import file_downloader
 
 import sys
 import json
